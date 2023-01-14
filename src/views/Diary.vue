@@ -1,7 +1,7 @@
 <template>
   <div class="dialy">
     <h1>日记</h1>
-    <a-row justify="center" >
+    <a-row justify="center">
       <a-col :span="12">
         <a-card>
           <a-form :model="form" layout="vertical">
@@ -45,15 +45,17 @@
 <script setup>
 import { reactive, ref, onMounted } from 'vue'
 import dayjs from 'dayjs'
-import { collection, addDoc, setDoc, getDocs, doc, getDoc } from "firebase/firestore";
+import { collection, addDoc, setDoc, getDocs, doc, getDoc, deleteDoc } from "firebase/firestore";
 import { db } from '@/firebase/index'
 import { useUser } from '@/store/useUser';
 import { storeToRefs } from 'pinia';
+import { message } from 'ant-design-vue'
 
 const { user } = storeToRefs(useUser())
 
 const loading = ref(false)
 const form = reactive({
+  id: null,
   title: '',
   content: '',
   date: ''
@@ -63,58 +65,87 @@ const form = reactive({
 let dialies = ref([])
 
 onMounted(async () => {
-  loading.value = true
-  const querySnapshot = await getDocs(collection(db, "dialy"));
-  let res = []
-  querySnapshot.forEach((doc) => {
-    const { id, title, content, date } = doc.data()
-    console.log(id, title, content, date);
-    res.push({
-      id,
-      title,
-      content,
-      date
-    })
-  });
-  dialies.value = res
-  loading.value = false
+  await fetchMemos()
 })
 
-const add = () => {
-  dialies.value.push({
-    id: Math.random(),
-    title: form.title,
-    content: form.content,
-    date: dayjs(form.date).format('YYYY-MM-DD')
-  })
+const fetchMemos = async () => {
+  loading.value = true
+  try {
+    const querySnapshot = await getDocs(collection(db, "dialy"));
+    let res = []
+    querySnapshot.forEach((doc) => {
+      const { title, content, date } = doc.data()
+      res.push({
+        id: doc.id,
+        title,
+        content,
+        date
+      })
+    });
+    dialies.value = res
+  } catch (e) {
+    console.log(e);
+  } finally {
+    loading.value = false
+  }
+}
+
+const add = async () => {
+  try {
+    loading.value = true
+    await setMemos(db, form)
+    await fetchMemos()
+  } catch (e) {
+    console.log(e);
+    message.error('投稿に失敗しました')
+  } finally {
+    reset()
+    loading.value = false
+  }
 }
 
 const edit = (row) => {
+  form.id = row.id
   form.title = row.title
   form.content = row.content
   form.date = dayjs(row.date)
 }
 
-const remove = (id) => {
-  dialies.value = dialies.value.filter(item => item.id !== id)
+const remove = async (id) => {
+  console.log(id);
+  try {
+    await deleteDoc(doc(db, 'dialy', id))
+    await fetchMemos()
+  } catch (e) {
+    console.log(e);
+    message.error('削除に失敗しました')
+  }
 }
 
-const setMemos = async (db, target, title, content) => {
-  if (target.id === null) {
+const setMemos = async (db, target) => {
+  console.log(target);
+  if (!target.id) {
     await addDoc(collection(db, 'dialy'), {
-      title: form.title,
-      content: form.content,
-      date: dayjs(form.date).format('YYYY-MM-DD'),
-      author_uid: user.uid
+      title: target.title,
+      content: target.content,
+      date: dayjs(target.date).format('YYYY-MM-DD'),
+      author_uid: user.value.uid
     })
   } else {
     await setDoc(doc(db, "dialy", target.id), {
-      title: "Los Angeles",
-      content: "CA",
-      created: "USA",
-      author_uid: user.uid
+      title: target.title,
+      content: target.content,
+      created: dayjs(target.date).format('YYYY-MM-DD'),
+      author_uid: user.value.uid
     });
   }
+}
+
+const reset = () => {
+  form.id = null
+  form.title = ''
+  form.content = ''
+  form.date = ''
 }
 
 </script>

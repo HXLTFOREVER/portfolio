@@ -36,7 +36,7 @@ export const useUser = defineStore("user", () => {
     const auth = getAuth();
     onAuthStateChanged(auth, (u) => {
       if (u) {
-        user.value = u.uid;
+        user.value = u;
         user_display_name.value = u.displayName;
       } else {
         user.value = null;
