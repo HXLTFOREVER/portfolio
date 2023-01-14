@@ -3,20 +3,17 @@
     <div class="profile">
       <a-row justify="center">
         <a-col :span='1'>
-          <a-avatar :size="64" :src="avatar1" />
+          <a-avatar :size="64" :src="avatar" />
         </a-col>
       </a-row>
       <a-row justify="center">
-        <a-col :span="2">
-          <p style="text-align: center;">北陆大学 经济学</p>
+        <a-col style="height: 7rem;display: flex; align-items: center;justify-content: center;" :span="6">
+          <p style="margin-bottom: 0;">北陸大学　経済経営学部　裘天辰です</p>
         </a-col>
       </a-row>
       <a-row justify="center">
-        <a-col :span="12">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum animi, sapiente cum sed ea ipsum ad
-            laudantium! Saepe earum veritatis molestiae dolorum modi asperiores repudiandae voluptates atque aut maxime?
-            Alias!
-          </p>
+        <a-col style="height: 7rem;display: flex; align-items: center;justify-content: center;" :span="12">
+          <p>北陸大学の留学生です</p>
         </a-col>
       </a-row>
       <a-row justify="center">
@@ -28,18 +25,18 @@
     <div class="memorys">
       <a-row justify="space-between">
         <a-col :span="7">
-          <img :src="avatar2" />
+          <img :src="image1" />
         </a-col>
         <a-col :span="7">
-          <img :src="avatar4" />
+          <img :src="image2" />
         </a-col>
         <a-col :span="7">
-          <img :src="avatar3" />
+          <img :src="image3" />
         </a-col>
       </a-row>
       <a-row style="margin: 3rem 0" justify="center">
         <a-col :span="2" style="display: flex;align-items: center;">
-          <span>大学的思い出</span>
+          <span>大学の思い出</span>
         </a-col>
         <a-col :span="2">
           <a-button shape="round">Memory</a-button>
@@ -51,7 +48,7 @@
     <div class="info">
       <a-row justify="center" align="middle" style="margin: 3rem 0">
         <a-col :span="4" class="flex-center">
-          <span>资格</span>
+          <h2 style="font-weight: bold;">スキルや資格</h2>
         </a-col>
       </a-row>
       <a-row justify="space-between">
@@ -62,10 +59,8 @@
                 <font-awesome-icon icon="fa-regular fa-star" />
               </template>
             </a-button>
-            <h1>Web开发</h1>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque labore provident suscipit nisi a quia
-              asperiores earum, in tempora. Aliquid corporis iure excepturi qui. Ex nam similique excepturi tempora
-              quos?</p>
+            <h1>英語</h1>
+            <p>英語が好きで、比較的流暢に英語で会話することができる</p>
           </a-card>
         </a-col>
         <a-col :span="7">
@@ -75,10 +70,8 @@
                 <font-awesome-icon icon="fa-regular fa-lightbulb" />
               </template>
             </a-button>
-            <h1>Web开发</h1>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque labore provident suscipit nisi a quia
-              asperiores earum, in tempora. Aliquid corporis iure excepturi qui. Ex nam similique excepturi tempora
-              quos?</p>
+            <h1>自転車</h1>
+            <p>サイクリングが好き</p>
           </a-card>
         </a-col>
         <a-col :span="7">
@@ -88,10 +81,8 @@
                 <font-awesome-icon icon="fa-solid fa-ribbon" />
               </template>
             </a-button>
-            <h1>Web开发</h1>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque labore provident suscipit nisi a quia
-              asperiores earum, in tempora. Aliquid corporis iure excepturi qui. Ex nam similique excepturi tempora
-              quos?</p>
+            <h1>歌う</h1>
+            <p></p>
           </a-card>
         </a-col>
       </a-row>
@@ -101,13 +92,11 @@
     <div class="activity">
       <a-card class="cus-card" :bordered="false">
         <div class="card-left">
-          <h1>活动</h1>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem adipisci doloremque, asperiores, eos
-            quibusdam perferendis possimus facere, repudiandae repellat nisi magnam nam aperiam ipsam. In nihil deserunt
-            iure ipsum aliquam.</p>
+          <h1>ゼミでの活動</h1>
+          <p>毎週金曜日の一限と二限</p>
         </div>
         <div class="card-right">
-          <img :src="activity">
+          <img style="border: 5px solid #fff" :src="activity">
         </div>
       </a-card>
     </div>
@@ -118,11 +107,12 @@
 </template>
 
 <script setup>
-import avatar1 from '@/assets/images/1.jpeg'
-import avatar2 from '@/assets/images/2.jpg'
-import avatar3 from '@/assets/images/3.jpg'
-import avatar4 from '@/assets/images/4.jpg'
+import avatar from '@/assets/images/avatar.jpg'
+import image1 from '@/assets/images/image1.jpg'
+import image2 from '@/assets/images/image2.jpg'
+import image3 from '@/assets/images/image3.jpg'
 import activity from '@/assets/images/activity.jpg'
+
 </script>
 
 <style lang="scss" scoped>
@@ -133,7 +123,6 @@ import activity from '@/assets/images/activity.jpg'
 
   .profile {
     margin: 5rem 0;
-
   }
 
   .memorys {

@@ -1,18 +1,18 @@
 <template>
   <div class="memory">
-    <h1>大学的回忆</h1>
+    <h1>大学の思い出</h1>
     <a-row justify="center">
       <a-col :span="12">
         <a-card>
           <a-form :model="form" layout="vertical">
-            <a-form-item label="标题">
+            <a-form-item label="タイトル">
               <a-input v-model:value="form.title" />
             </a-form-item>
-            <a-form-item label="年份">
+            <a-form-item label="年度">
               <a-input v-model:value="form.date" />
             </a-form-item>
             <a-row justify="center">
-              <a-button type="primary" shape="round" @click="search">检索</a-button>
+              <a-button type="primary" shape="round" @click="search">検索</a-button>
             </a-row>
           </a-form>
         </a-card>

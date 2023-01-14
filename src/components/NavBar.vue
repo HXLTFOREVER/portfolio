@@ -19,7 +19,7 @@ const count = ref(0)
         <router-link to="/memory">Memory</router-link>
       </li>
       <li>
-        <router-link to="/diary">Diary</router-link>
+        <router-link to="/dialy">Dialy</router-link>
       </li>
     </ul>
   </div>

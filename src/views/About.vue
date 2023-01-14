@@ -1,10 +1,10 @@
 <template>
   <div class="about-page">
     <div class="course">
-      <h1 style="text-align: center;line-height: 4;">2021年度 课程安排</h1>
+      <h1 style="text-align: center;line-height: 4;">２０２１年度　後期時間割</h1>
       <a-row justify="center">
-        <a-col :span="10">
-          <a-table :columns="columns" :data-source="data" />
+        <a-col :span="14">
+          <a-table :columns="columns" :data-source="data" :pagination="false" />
         </a-col>
       </a-row>
     </div>
@@ -12,12 +12,26 @@
     <div class="experience">
       <h1 style="text-align: center;line-height: 4;">職歴・アルバイト歴を配置</h1>
       <ul class="list">
-        <li class="item" v-for="item in 3">
-          <h1 class="title">Web Developer</h1>
-          <div class="time">2019-10-21</div>
+        <li class="item">
+          <h1 class="title">マクドナルド</h1>
+          <div class="time">2020.1.5－2020.3.5</div>
           <div class="badge">
             <a-tag color="#4798fd">
-              hello world
+              パートタイムジョブ
+            </a-tag>
+          </div>
+          <div class="content">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus, omnis! Aliquid
+            nostrum magnam nisi similique sint perferendis et vero necessitatibus iusto est, magni nulla beatae corporis
+            fugit reiciendis, qui omnis?
+          </div>
+        </li>
+        <li class="item">
+          <h1 class="title">ファミリーマート</h1>
+          <div class="time">2022.5.27-2023.1.20</div>
+          <div class="badge">
+            <a-tag color="#4798fd">
+              パートタイムジョブ
             </a-tag>
           </div>
           <div class="content">
@@ -99,9 +113,80 @@
 
 <script setup>
 import { ref } from 'vue';
-
-const columns = []
-const data = ref([])
+const columns = [
+  {
+    title: '#',
+    dataIndex: 'idx',
+    key: 'idx',
+  },
+  {
+    title: '月曜',
+    dataIndex: 'Monday',
+    key: 'monday',
+  },
+  {
+    title: '火曜',
+    dataIndex: 'Tuesday',
+    key: 'tuesday',
+  },
+  {
+    title: '水曜',
+    dataIndex: 'Wednesday',
+    key: 'wednesday',
+  },
+  {
+    title: '木曜',
+    dataIndex: 'Thursday',
+    key: 'thursday',
+  },
+  {
+    title: '金曜',
+    dataIndex: 'Friday',
+    key: 'friday',
+  },
+]
+const data = ref([
+  {
+    idx: 1,
+    Monday: '',
+    Tuesday: '',
+    Wednesday: '情報通信ネットワークⅡ',
+    Thursday: '',
+    Friday: '卒業研究',
+  },
+  {
+    idx: 2,
+    Monday: '',
+    Tuesday: '',
+    Wednesday: '',
+    Thursday: '',
+    Friday: '卒業研究',
+  },
+  {
+    idx: 3,
+    Monday: '',
+    Tuesday: '',
+    Wednesday: '',
+    Thursday: '',
+    Friday: '',
+  },
+  {
+    idx: 4,
+    Monday: '',
+    Tuesday: '',
+    Wednesday: '',
+    Thursday: '',
+    Friday: '',
+  },
+  {
+    idx: 5,
+    Monday: '',
+    Tuesday: '',
+    Wednesday: 'Javaプログラミング応用',
+    Thursday: 'Cプログラミング',
+    Friday: '情報システムⅡ',
+  },
+])
 
 </script>
 
@@ -156,6 +241,7 @@ const data = ref([])
 
   .education {
     margin-bottom: 8rem;
+
     .list {
       list-style: none;
       display: flex;
@@ -214,6 +300,7 @@ const data = ref([])
 
   .hobbies {
     margin-bottom: 4rem;
+
     h1 {
       line-height: 4;
       text-align: center;

@@ -1,4 +1,4 @@
-import image7 from "@/assets/images/7.jpg";
+import image7 from "@/assets/images/memory.jpg";
 import dayjs from "dayjs";
 
 export const initGallries = () => {

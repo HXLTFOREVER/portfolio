@@ -10,6 +10,9 @@ import { far } from "@fortawesome/free-regular-svg-icons";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { createPinia } from "pinia";
+import dayjs from "dayjs";
+import "dayjs/locale/ja";
+dayjs.locale("ja");
 
 library.add(fas);
 library.add(far);

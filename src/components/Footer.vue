@@ -8,7 +8,7 @@
           <router-link to="/memory">Memory</router-link>
         </a-col>
         <a-col :span='1' class="flex-center">
-          <router-link to="/diary">Dialy</router-link>
+          <router-link to="/dialy">Dialy</router-link>
         </a-col>
       </a-row>
       <a-row justify="center">
