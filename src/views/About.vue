@@ -17,13 +17,10 @@
           <div class="time">2020.1.5－2020.3.5</div>
           <div class="badge">
             <a-tag color="#4798fd">
-              パートタイムジョブ
+              Amazing Co.
             </a-tag>
           </div>
           <div class="content">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus, omnis! Aliquid
-            nostrum magnam nisi similique sint perferendis et vero necessitatibus iusto est, magni nulla beatae corporis
-            fugit reiciendis, qui omnis?
           </div>
         </li>
         <li class="item">
@@ -31,13 +28,10 @@
           <div class="time">2022.5.27-2023.1.20</div>
           <div class="badge">
             <a-tag color="#4798fd">
-              パートタイムジョブ
+              Amazing Co.
             </a-tag>
           </div>
           <div class="content">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus, omnis! Aliquid
-            nostrum magnam nisi similique sint perferendis et vero necessitatibus iusto est, magni nulla beatae corporis
-            fugit reiciendis, qui omnis?
           </div>
         </li>
       </ul>
@@ -51,13 +45,10 @@
           <div class="time">2019-10-21</div>
           <div class="badge">
             <a-tag color="#2dc998">
-              hello world
+              High School
             </a-tag>
           </div>
           <div class="content">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus, omnis! Aliquid
-            nostrum magnam nisi similique sint perferendis et vero necessitatibus iusto est, magni nulla beatae corporis
-            fugit reiciendis, qui omnis?
           </div>
         </li>
       </ul>
@@ -81,19 +72,18 @@
             <h1>Contact Info</h1>
             <p>
               <span><font-awesome-icon icon="fa-regular fa-calendar" /></span>
-              2000/10/21
+              2000/01/01
             </p>
             <p>
               <span><font-awesome-icon icon="fa-solid fa-user" /></span>
-              坂本 一龙
+              蜡笔小新
             </p>
             <p>
               <span><font-awesome-icon icon="fa-solid fa-phone" /></span>
-              17354312163
+              1234567890
             </p>
             <p>
               <span><font-awesome-icon icon="fa-solid fa-envelope" /></span>
-              1216044881@qq.com
             </p>
           </a-card>
         </a-col>
@@ -102,10 +92,7 @@
     <div class="hobbies">
       <h1>趣味</h1>
       <a-typography-paragraph class="desc">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime totam deserunt, repellat
-        debitis tempora qui
-        ipsa modi voluptate quaerat obcaecati, quas et fugiat voluptatum laborum veritatis labore inventore odit?
-        Quaerat!</a-typography-paragraph>
+      </a-typography-paragraph>
     </div>
     <a-divider />
   </div>
@@ -157,17 +144,17 @@ const data = ref([
   {
     idx: 2,
     Monday: '',
-    Tuesday: '',
+    Tuesday: 'データベースⅡ',
     Wednesday: '',
     Thursday: '',
     Friday: '卒業研究',
   },
   {
     idx: 3,
-    Monday: '',
-    Tuesday: '',
+    Monday: 'コーポレートファイナンス',
+    Tuesday: 'データベースⅡ',
     Wednesday: '',
-    Thursday: '',
+    Thursday: '民法Ⅲ',
     Friday: '',
   },
   {

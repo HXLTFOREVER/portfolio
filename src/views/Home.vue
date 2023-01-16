@@ -8,7 +8,7 @@
       </a-row>
       <a-row justify="center">
         <a-col style="height: 7rem;display: flex; align-items: center;justify-content: center;" :span="6">
-          <p style="margin-bottom: 0;">北陸大学　経済経営学部　裘天辰です</p>
+          <p style="margin-bottom: 0;">北陸大学　経済経営学部　潘明です</p>
         </a-col>
       </a-row>
       <a-row justify="center">
@@ -29,6 +29,7 @@
         </a-col>
         <a-col :span="7">
           <img :src="image2" />
+
         </a-col>
         <a-col :span="7">
           <img :src="image3" />
@@ -39,7 +40,7 @@
           <span>大学の思い出</span>
         </a-col>
         <a-col :span="2">
-          <a-button shape="round">Memory</a-button>
+          <a-button shape="round" @click="$router.push('/memory')">Memory</a-button>
         </a-col>
       </a-row>
       <a-divider />
@@ -59,8 +60,8 @@
                 <font-awesome-icon icon="fa-regular fa-star" />
               </template>
             </a-button>
-            <h1>英語</h1>
-            <p>英語が好きで、比較的流暢に英語で会話することができる</p>
+            <h1>コンピュータ</h1>
+            <p>プログラミングが得意な方</p>
           </a-card>
         </a-col>
         <a-col :span="7">
@@ -70,8 +71,8 @@
                 <font-awesome-icon icon="fa-regular fa-lightbulb" />
               </template>
             </a-button>
-            <h1>自転車</h1>
-            <p>サイクリングが好き</p>
+            <h1>ダンス</h1>
+            <p>ハンサムなストリートダンスを踊ることができる</p>
           </a-card>
         </a-col>
         <a-col :span="7">
@@ -81,8 +82,8 @@
                 <font-awesome-icon icon="fa-solid fa-ribbon" />
               </template>
             </a-button>
-            <h1>歌う</h1>
-            <p></p>
+            <h1>バスケットボールをする.</h1>
+            <p>バスケットボールは大好きなスポーツです。</p>
           </a-card>
         </a-col>
       </a-row>

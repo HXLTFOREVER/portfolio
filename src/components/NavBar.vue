@@ -7,7 +7,7 @@ const count = ref(0)
 
 <template>
   <div class="navbar">
-    <h1>Fujimoto's Portfolio</h1>
+    <h1>PAN MING’s  Portfolio</h1>
     <ul class="nav">
       <li>
         <router-link to="/">Home</router-link>

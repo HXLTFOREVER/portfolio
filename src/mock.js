@@ -3,7 +3,7 @@ import dayjs from "dayjs";
 
 export const initGallries = () => {
   let res = [];
-  Array.from({ length: 10 }).forEach((item, index) => {
+  Array.from({ length: 4 }).forEach((item, index) => {
     res.push({
       title: "title" + index,
       date: index % 2 ? "1年生" : "2年生",
